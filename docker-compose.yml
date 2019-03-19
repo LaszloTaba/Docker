@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_USER: 'user'
+      MYSQL_PASS: 'default'
+  adminer:
+    image: adminer:latest
+    container_name: adminer_container
+    restart: always
+    ports:
+      - "8080:8080"
+  ubuntu1:
+    image: ubuntu:latest
+    container_name: ubuntu1
+    restart: always
+  ubuntu2:
+    image: ubuntu:latest
+    container_name: ubuntu2
+    restart: always
